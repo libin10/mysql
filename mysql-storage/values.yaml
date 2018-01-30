@@ -1,0 +1,4 @@
+mysqlStorage:
+  namespace: dev
+  efs:
+    server: fs-blahblah.efs.us-west-2.amazonaws.com

@@ -1,0 +1,7 @@
+mysql:
+  namespace: dev
+  image:
+    name: mysql
+    tag: "5.6"
+    pullPolicy: IfNotPresent
+  rootPassword: root
