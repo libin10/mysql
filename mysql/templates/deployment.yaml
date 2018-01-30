@@ -25,7 +25,7 @@ spec:
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
-          value: MvBpwyWseYSXGDuH
+          value: {{ .Values.mysql.rootPassword }}
         ports:
         - containerPort: 3306
           name: mysql
