@@ -6,11 +6,11 @@ metadata:
     release: {{ .Release.Name | quote }}
     heritage: {{ .Release.Service | quote }}
     version: {{ .Chart.Version }}
-  name: mysql-dev-data
+  name: {{ .Values.mysqlStorage.pvcName }}
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
       storage: 100Gi
-  volumeName: mysql-dev-data-efs-pv
+  volumeName: {{ .Values.mysqlStorage.pvName }}

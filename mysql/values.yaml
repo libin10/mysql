@@ -5,3 +5,4 @@ mysql:
     tag: "5.6"
     pullPolicy: IfNotPresent
   rootPassword: root
+  volumeClaimName: mysql-dev-data-pvc

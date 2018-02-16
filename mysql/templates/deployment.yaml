@@ -35,4 +35,4 @@ spec:
       volumes:
       - name: mysql-persistent-storage
         persistentVolumeClaim:
-          claimName: mysql-dev-data
+          claimName: {{ .Values.mysql.volumeClaimName }}
