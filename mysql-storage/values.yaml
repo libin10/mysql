@@ -1,4 +1,7 @@
 mysqlStorage:
   namespace: dev
+  pvName: mysql-dev-data-pv
+  pvcName: mysql-dev-data-pvc
+  pvPath: /mysql-dev-data
   efs:
     server: fs-blahblah.efs.us-west-2.amazonaws.com
