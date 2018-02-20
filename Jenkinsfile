@@ -6,7 +6,7 @@ String mysqlStoragePackageName = ""
 String mysqlChartName = "mysql"
 String mysqlStorageChartName = "mysql-storage"
 
-clientsNode(clientsImage: 'stakater/pipeline-tools:dev') {
+clientsNode(clientsImage: 'stakater/pipeline-tools:1.0') {
     container(name: 'clients') {
         def helm = new io.stakater.charts.Helm()
         def chartManager = new io.stakater.charts.ChartManager()
