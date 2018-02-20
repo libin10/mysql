@@ -5,4 +5,6 @@ mysql:
     tag: "5.6"
     pullPolicy: IfNotPresent
   rootPassword: root
-  volumeClaimName: mysql-dev-data-pvc
+  persistence:
+    enabled: false
+    volumeClaimName: mysql-dev-data-pvc
