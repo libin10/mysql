@@ -3,13 +3,11 @@ kind: PersistentVolume
 metadata:
   name: {{ .Values.mysqlStorage.pvName }}
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service | quote }}
-    version: {{ .Chart.Version }}
+{{ include "labels.stakater" . | indent 4 }}
+{{ include "labels.chart" . | indent 4 }}
 spec:
   capacity:
-    storage: 100Gi
+    storage: {{ .Values.mysqlStorage.capacity }}
   accessModes:
     - ReadWriteOnce
   nfs:

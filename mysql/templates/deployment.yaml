@@ -1,27 +1,22 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: mysql
+  name: {{ template "name" . }}
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service | quote }}
-    version: {{ .Chart.Version }}
+{{ include "labels.stakater" . | indent 4 }}
+{{ include "labels.chart" . | indent 4 }}
 spec:
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-        release: {{ .Release.Name | quote }}
-        heritage: {{ .Release.Service | quote }}
-        version: {{ .Chart.Version }}
+{{ include "labels.selector" . | indent 8 }}
     spec:
       containers:
       - image: "{{ .Values.mysql.image.name }}:{{ .Values.mysql.image.tag }}"
         imagePullPolicy: {{ .Values.mysql.image.pullPolicy }}
-        name: mysql
+        name: {{ template "name" . }}
         env:
           # Use secret in real usage
         - name: MYSQL_ROOT_PASSWORD
