@@ -1,6 +1,6 @@
 mysql:
   labels:
-    group: com.stakater.provider
+    group: com.stakater.platform
     provider: stakater
     version: 5.6
   namespace: dev
