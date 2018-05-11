@@ -23,7 +23,7 @@ provider: {{ .Values.mysqlStorage.labels.provider }}
 
 {{- define "labels.stakater" -}}
 {{ template "labels.selector" . }}
-version: {{ .Values.mysqlStorage.labels.version | quote }}
+version: "{{ .Values.mysqlStorage.labels.version }}"
 {{- end -}}
 
 {{- define "labels.chart" -}}
