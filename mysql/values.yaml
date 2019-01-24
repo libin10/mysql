@@ -1,4 +1,5 @@
 mysql:
+  tolerations: {}
   labels:
     group: com.stakater.platform
     provider: stakater

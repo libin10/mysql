@@ -13,6 +13,10 @@ spec:
       labels:
 {{ include "labels.selector" . | indent 8 }}
     spec:
+    {{- if .Values.mysql.tolerations }}
+      tolerations:
+{{ toYaml .Values.mysql.tolerations | indent 8 -}}
+    {{- end }}
       containers:
       - image: "{{ .Values.mysql.image.name }}:{{ .Values.mysql.image.tag }}"
         imagePullPolicy: {{ .Values.mysql.image.pullPolicy }}
